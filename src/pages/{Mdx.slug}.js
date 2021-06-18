@@ -21,13 +21,13 @@ const BlogPost = ({data}) => {
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
-    mdx: {
+    mdx: PropTypes.shape({
       body: PropTypes.string,
-      frontmatter: {
+      frontmatter: PropTypes.shape( {
         title: PropTypes.string,
         date: PropTypes.string,
-      },
-    },
+      }),
+    }),
   }).isRequired,
 };
 

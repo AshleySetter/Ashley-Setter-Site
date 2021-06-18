@@ -33,8 +33,8 @@ const BlogPage = () => {
       <ul>
         {
         blogPosts.map(({title, date, slug}) => (
-          <Link to={`/${slug}`}>
-            <li className={blogListItem} key={title}>
+          <Link to={`/${slug}`} key={title}>
+            <li className={blogListItem}>
               {title} - {date}
             </li>
           </Link>
