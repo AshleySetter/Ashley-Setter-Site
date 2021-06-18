@@ -12,9 +12,9 @@ const BlogPost = ({data}) => {
   } = data.mdx;
   return (
     <Layout pageTitle={title}>
-      <ul>
+      <article>
         <MDXRenderer>{body}</MDXRenderer>
-      </ul>
+      </article>
     </Layout>
   );
 };
@@ -32,7 +32,7 @@ BlogPost.propTypes = {
 };
 
 export const query = graphql`
-  query blog_post_by_slug($slug: String) {
+  query blogPostBySlug($slug: String) {
     mdx(slug: {eq: $slug}) {
       id
       slug
