@@ -5,7 +5,7 @@ import {StaticImage} from "gatsby-plugin-image";
 // markup
 const IndexPage = () => {
   return (
-    <Layout pageTitle="main page">
+    <Layout pageTitle="Welcome to my Site">
       <p>I'm making this by following the Gatsby Tutorial.</p>
       <div>
         <StaticImage
