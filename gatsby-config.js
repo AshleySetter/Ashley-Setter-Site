@@ -7,6 +7,8 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-remark",
     "gatsby-remark-images",
     {
       resolve: "gatsby-plugin-mdx",

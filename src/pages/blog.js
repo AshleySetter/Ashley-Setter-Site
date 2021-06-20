@@ -2,6 +2,7 @@ import * as React from "react";
 import {useStaticQuery, graphql, Link} from "gatsby";
 import dayjs from "dayjs";
 import sortBy from "lodash.sortby";
+import Img from "gatsby-image";
 
 import {
   blogListItem,
@@ -20,6 +21,13 @@ const BlogPage = () => {
             frontmatter {
                 date
                 title
+                featuredImage {
+                  childImageSharp {
+                    fluid(maxWidth: 630) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
             }
         }
       }
@@ -32,12 +40,15 @@ const BlogPage = () => {
     <Layout pageTitle="My Blog Posts">
       <ul>
         {
-        blogPosts.map(({title, date, slug}) => (
-          <Link to={`/${slug}`} key={title}>
-            <li className={blogListItem}>
-              {title} - {date}
-            </li>
-          </Link>
+        blogPosts.map(({title, date, slug, featuredImage}) => (
+          <React.Fragment>
+            <Link to={`/${slug}`} key={title}>
+              <li className={blogListItem}>
+                {title} - {date}
+              </li>
+            </Link>
+            <Img fluid={featuredImage?.childImageSharp?.fluid} />
+          </React.Fragment>
         ))
       }
       </ul>
