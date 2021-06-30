@@ -3,10 +3,7 @@ import {useStaticQuery, graphql, Link} from "gatsby";
 import dayjs from "dayjs";
 import sortBy from "lodash.sortby";
 import Img from "gatsby-image";
-
-import {
-  blogListItem,
-} from "./blog.module.css";
+import {Box} from "@chakra-ui/react";
 
 import Layout from "../components/layout";
 
@@ -38,20 +35,31 @@ const BlogPage = () => {
   blogPosts = sortBy(blogPosts, ({date}) => -dayjs(date).valueOf());
   return (
     <Layout pageTitle="My Blog Posts">
-      <ul>
+      <Box>
         {
         blogPosts.map(({title, date, slug, featuredImage}) => (
-          <React.Fragment>
+          <Box
+            maxW="sm" borderWidth="1rem" borderRadius="lg"
+            overflow="hidden" margin="1rem" backgroundColor="gray.200"
+          >
             <Link to={`/${slug}`} key={title}>
-              <li className={blogListItem}>
-                {title} - {date}
-              </li>
+              <Box maxW="sm" borderWidth="rem" borderRadius="lg">
+                <Img fluid={featuredImage?.childImageSharp?.fluid} />
+              </Box>
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                isTruncated
+              >
+                {dayjs(date).format("DD/MM/YYYY")} - {title}
+              </Box>
             </Link>
-            <Img fluid={featuredImage?.childImageSharp?.fluid} />
-          </React.Fragment>
+          </Box>
         ))
       }
-      </ul>
+      </Box>
     </Layout>
   );
 };
