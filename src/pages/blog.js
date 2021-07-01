@@ -3,7 +3,7 @@ import {useStaticQuery, graphql, Link} from "gatsby";
 import dayjs from "dayjs";
 import sortBy from "lodash.sortby";
 import Img from "gatsby-image";
-import {Box} from "@chakra-ui/react";
+import {Box, Card, CardHeader, CardBody, CardFooter, Text} from "grommet";
 
 import Layout from "../components/layout";
 
@@ -38,25 +38,22 @@ const BlogPage = () => {
       <Box>
         {
         blogPosts.map(({title, date, slug, featuredImage}) => (
-          <Box
-            maxW="sm" borderWidth="1rem" borderRadius="lg"
-            overflow="hidden" margin="1rem" backgroundColor="gray.200"
-          >
-            <Link to={`/${slug}`} key={title}>
-              <Box maxW="sm" borderWidth="rem" borderRadius="lg">
+          <Link to={`/${slug}`} key={title}>
+            <Card
+              height="medium" width="medium" background="light-1"
+              margin="1rem"
+            >
+              <CardHeader pad="medium">
+                <Text size="large">{title}</Text>
+              </CardHeader>
+              <CardBody pad="medium">
                 <Img fluid={featuredImage?.childImageSharp?.fluid} />
-              </Box>
-              <Box
-                mt="1"
-                fontWeight="semibold"
-                as="h4"
-                lineHeight="tight"
-                isTruncated
-              >
-                {dayjs(date).format("DD/MM/YYYY")} - {title}
-              </Box>
-            </Link>
-          </Box>
+              </CardBody>
+              <CardFooter pad={{horizontal: "small"}} background="light-2" justify="end">
+                <Text> {dayjs(date).format("DD/MM/YYYY")}</Text>
+              </CardFooter>
+            </Card>
+          </Link>
         ))
       }
       </Box>

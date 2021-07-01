@@ -15,8 +15,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.13",
-    "@chakra-ui/react": "^1.6.3",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@mdx-js/mdx": "^1.6.22",
@@ -34,19 +32,21 @@
     "gatsby-source-filesystem": "^3.7.1",
     "gatsby-transformer-remark": "^4.4.1",
     "gatsby-transformer-sharp": "^3.7.1",
+    "grommet": "^2.17.3",
+    "grommet-icons": "^4.6.0",
     "lodash.sortby": "^4.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "styled-components": "^5.3.0",
     "uikit": "^3.7.0"
   },
   "devDependencies": {
-    "@chakra-ui/gatsby-plugin": "^2.0.1",
     "@nqminds/eslint-config": "^1.1.2",
     "@nqminds/eslint-config-react": "^1.0.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-mocha": "^9.0.0",
     "eslint": "^7.28.0",
+    "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-jsdoc": "^35.3.0",
+    "eslint-plugin-mocha": "^9.0.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0"
   }

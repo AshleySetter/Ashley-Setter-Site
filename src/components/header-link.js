@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Heading, LinkBox, LinkOverlay} from "@chakra-ui/react";
+import {Link} from "gatsby";
+import {Header, Text} from "grommet";
 
 /**
  * A header link component to display header text which are links
@@ -12,13 +13,11 @@ import {Heading, LinkBox, LinkOverlay} from "@chakra-ui/react";
  */
 function HeaderLink({text, url}) {
   return (
-    <LinkBox>
-      <Heading p="1rem" size="md">
-        <LinkOverlay href={url}>
-          {text}
-        </LinkOverlay>
-      </Heading>
-    </LinkBox>
+    <Link to={url}>
+      <Header pad="1rem">
+        <Text>{text}</Text>
+      </Header>
+    </Link>
   );
 }
 

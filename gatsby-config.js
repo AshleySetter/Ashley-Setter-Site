@@ -29,6 +29,5 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
-    "@chakra-ui/gatsby-plugin",
   ],
 };
