@@ -36,7 +36,7 @@ const BlogPage = () => {
   blogPosts = sortBy(blogPosts, ({date}) => -dayjs(date).valueOf());
   return (
     <Layout pageTitle="My Blog Posts">
-      <Box>
+      <Box direction="row" wrap>
         {
         blogPosts.map(({title, date, slug, featuredImage}) => (
           <Link to={`/blog/${slug}`} key={title}>
