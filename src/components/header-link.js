@@ -15,10 +15,11 @@ import {Location} from "@reach/router";
  */
 function HeaderLink({text, url, location}) {
   const {pathname} = location;
+  const rootPathName = `/${pathname.split("/")[1]}`;
   return (
     <Link to={url}>
       <Header pad="1rem">
-        <Text color={pathname === url ? "brand" : "text"}>{text}</Text>
+        <Text color={rootPathName === url ? "brand" : "text"}>{text}</Text>
       </Header>
     </Link>
   );
