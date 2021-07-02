@@ -48,7 +48,7 @@ const BlogPage = () => {
                 <Text size="large">{title}</Text>
               </CardHeader>
               <CardBody pad="medium">
-                <Img fluid={featuredImage?.childImageSharp?.fluid} />
+                {featuredImage?.childImageSharp?.fluid && <Img fluid={featuredImage?.childImageSharp?.fluid} />}
               </CardBody>
               <CardFooter pad={{horizontal: "small"}} background="light-2" justify="end">
                 <Text> {dayjs(date).format("DD/MM/YYYY")}</Text>

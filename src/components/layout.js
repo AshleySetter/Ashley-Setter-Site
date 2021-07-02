@@ -40,7 +40,7 @@ const Layout = ({pageTitle, children}) => {
           </Box>
           <Nav direction="row">
             {navLinks.map(({icon, url}) =>
-              (<Link to={url}>
+              (<Link key={url} to={url}>
                 {icon}
               </Link>),
             )}
