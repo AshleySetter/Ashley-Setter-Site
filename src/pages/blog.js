@@ -39,7 +39,7 @@ const BlogPage = () => {
       <Box>
         {
         blogPosts.map(({title, date, slug, featuredImage}) => (
-          <Link to={`/${slug}`} key={title}>
+          <Link to={`/blog/${slug}`} key={title}>
             <Card
               height="medium" width="medium" background="light-1"
               margin="1rem"
