@@ -5,7 +5,7 @@ import {useStaticQuery, graphql} from "gatsby";
 import HeaderLink from "./header-link";
 import {Mail} from "grommet-icons";
 import {Grommet, Box as GrommetBox, Button, Header, Text} from "grommet";
-import {grommet} from "grommet/themes";
+import {grommet as theme} from "grommet/themes";
 
 const Layout = ({pageTitle, children}) => {
   const data = useStaticQuery(graphql`
@@ -26,7 +26,7 @@ const Layout = ({pageTitle, children}) => {
 
   return (
     <Grommet
-      theme={grommet}
+      theme={theme}
       full
       style={{
         display: "flex",

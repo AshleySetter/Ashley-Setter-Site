@@ -1,5 +1,6 @@
 import * as React from "react";
-import {useStaticQuery, graphql, Link} from "gatsby";
+import {useStaticQuery, graphql} from "gatsby";
+import Link from "../components/link";
 import dayjs from "dayjs";
 import sortBy from "lodash.sortby";
 import Img from "gatsby-image";
