@@ -19,7 +19,7 @@ function HeaderLink({text, url, location}) {
   return (
     <Link to={url}>
       <Header pad="1rem">
-        <Text color={rootPathName === url ? "brand" : "text"}>{text}</Text>
+        <Text color={rootPathName === url ? "focus" : "text"}>{text}</Text>
       </Header>
     </Link>
   );

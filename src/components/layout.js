@@ -1,29 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {useStaticQuery, graphql} from "gatsby";
 
+import Link from "./link";
 import HeaderLink from "./header-link";
-import {Mail} from "grommet-icons";
-import {Grommet, Box as GrommetBox, Button, Header, Text} from "grommet";
+import {Mail, Github, Facebook, Linkedin, Instagram, Twitter} from "grommet-icons";
+import {Grommet, Box, Header, Nav, Text} from "grommet";
 import {grommet as theme} from "grommet/themes";
 
 const Layout = ({pageTitle, children}) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   const links = [
     {text: "Home", url: "/"},
     {text: "Blog", url: "/blog"},
     {text: "About", url: "/about"},
   ];
 
+  const navLinks = [
+    {icon: <Mail />, url: "mailto:assetter@hotmail.com"},
+    {icon: <Github />, url: "https://github.com/ashleysetter"},
+    {icon: <Facebook />, url: "https://www.facebook.com/ash.setter"},
+    {icon: <Linkedin />, url: "https://uk.linkedin.com/in/ashleysetter"},
+    {icon: <Instagram />, url: "https://www.instagram.com/setterash/"},
+    {icon: <Twitter />, url: "https://twitter.com/AshleySetter"},
+  ];
   return (
     <Grommet
       theme={theme}
@@ -33,29 +31,28 @@ const Layout = ({pageTitle, children}) => {
         flexDirection: "column",
       }}
     >
-      <GrommetBox direction="column">
-        <Header pad="1rem">
-          <Text size="xxlarge">{data.site.siteMetadata.title}</Text>
-        </Header>
-        <Header pad="1rem">
-          <Text size="large">{pageTitle}</Text>
-        </Header>
-        <GrommetBox direction="row" align="center" justify="between">
-          <GrommetBox direction="row">
+      <Box direction="column">
+        <Header background="brand" pad="medium" justify="between">
+          <Box direction="row">
             {links.map(({text, url}) => (
               <HeaderLink key={text} text={text} url={url} />
-          ))}
-          </GrommetBox>
-          <GrommetBox direction="row">
-            <Button margin="1rem">
-              <Mail />
-            </Button>
-          </GrommetBox>
-        </GrommetBox>
-        <GrommetBox pad="1rem">
+              ))}
+          </Box>
+          <Nav direction="row">
+            {navLinks.map(({icon, url}) =>
+              (<Link to={url}>
+                {icon}
+              </Link>),
+            )}
+          </Nav>
+        </Header>
+        <Header pad="1rem" justify="center">
+          <Text size="xlarge" weight="bold">{pageTitle}</Text>
+        </Header>
+        <Box pad="1rem">
           {children}
-        </GrommetBox>
-      </GrommetBox>
+        </Box>
+      </Box>
     </Grommet>
   );
 };
