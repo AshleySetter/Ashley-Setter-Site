@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import {MDXRenderer} from "gatsby-plugin-mdx";
 
-import Layout from "../components/layout";
+import Layout from "./layout";
 
 const BlogPost = ({pageContext: {node}}) => {
   const {

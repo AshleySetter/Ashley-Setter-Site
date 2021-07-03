@@ -32,7 +32,7 @@ exports.createPages = async({graphql, actions, reporter}) => {
       // Use the slug to create the url path
       path: `/blog/${node.slug}`,
       // This component will wrap our MDX content
-      component: path.resolve("./src/pages/blog-post.js"),
+      component: path.resolve("./src/components/blog-post.js"),
       // can use context to pass props to the MDX component defined above
       context: {
         node,
