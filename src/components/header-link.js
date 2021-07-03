@@ -18,7 +18,7 @@ function HeaderLink({text, url, location}) {
   const rootPathName = `/${pathname.split("/")[1]}`;
   return (
     <Link to={url}>
-      <Header pad="1rem">
+      <Header pad="small">
         <Text color={rootPathName === url ? "focus" : "text"}>{text}</Text>
       </Header>
     </Link>

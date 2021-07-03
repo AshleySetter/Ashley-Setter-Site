@@ -12,13 +12,13 @@ const AboutPage = () => {
         My partner Heather and I own 2 lovely cats which may be seen below.
       </p>
       <Box direction="row" wrap>
-        <Card height="medium" width="medium">
+        <Card margin="small" height="medium" width="medium">
           <StaticImage
             alt="Jinx a black cat, lying on a window ledge in the sun and looking up at the camera."
             src="../images/Jinx.jpg"
           />
         </Card>
-        <Card height="medium" width="medium">
+        <Card margin="small" height="medium" width="medium">
           <StaticImage
             alt="Tux a black and white cat, sitting on a window ledge, looking up at the camera."
             src="../images/Tux.jpg"

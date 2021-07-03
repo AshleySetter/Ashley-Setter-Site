@@ -42,15 +42,15 @@ const BlogPage = () => {
           <Link to={`/blog/${slug}`} key={title}>
             <Card
               height="medium" width="medium" background="light-1"
-              margin="1rem"
+              margin="small"
             >
-              <CardHeader pad="medium">
+              <CardHeader pad="small" background="light-3">
                 <Text size="large">{title}</Text>
               </CardHeader>
-              <CardBody pad="medium">
+              <CardBody pad="small" background="light-2">
                 {featuredImage?.childImageSharp?.fluid && <Img fluid={featuredImage?.childImageSharp?.fluid} />}
               </CardBody>
-              <CardFooter pad={{horizontal: "small"}} background="light-2" justify="end">
+              <CardFooter pad={{horizontal: "small"}} background="light-3" justify="end">
                 <Text> {dayjs(date).format("DD/MM/YYYY")}</Text>
               </CardFooter>
             </Card>

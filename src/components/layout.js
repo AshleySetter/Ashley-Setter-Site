@@ -5,7 +5,8 @@ import Link from "./link";
 import HeaderLink from "./header-link";
 import {Mail, Github, Facebook, Linkedin, Instagram, Twitter} from "grommet-icons";
 import {Grommet, Box, Header, Nav, Text} from "grommet";
-import {grommet as theme} from "grommet/themes";
+// import {grommet as theme} from "grommet/themes";
+import theme from "../theme";
 
 const Layout = ({pageTitle, children}) => {
   const links = [
@@ -46,10 +47,10 @@ const Layout = ({pageTitle, children}) => {
             )}
           </Nav>
         </Header>
-        <Header pad="1rem" justify="center">
+        <Header pad="small" justify="center">
           <Text size="xlarge" weight="bold">{pageTitle}</Text>
         </Header>
-        <Box pad="1rem">
+        <Box pad="small">
           {children}
         </Box>
       </Box>
