@@ -18,12 +18,12 @@ export default {
         "dark": "rgba(255,255,255,0.33)",
         "light": "rgba(0,0,0,0.33)",
       },
-      "brand": "#FB8500",
+      "brand": "#1b3a4b",
       "control": {
         "dark": "accent-1",
         "light": "brand",
       },
-      "focus": "dark-5",
+      "focus": "light-2",
       "placeholder": "#AAAAAA",
       "selected": "brand",
       "text": {
