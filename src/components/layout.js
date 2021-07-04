@@ -9,21 +9,6 @@ import theme from "../theme";
 import {navigate} from "gatsby";
 
 const Layout = ({pageTitle, children}) => {
-  const headerRef = React.useRef(null);
-
-  React.useEffect(() => {
-    console.log(headerRef); // eslint-disable-line no-console
-  });
-
-  const MyHeader = React.forwardRef((props, ref) => (
-    <div ref={ref}>
-      <Header {...props}>
-        {props.children}
-      </Header>
-    </div>),
-  );
-  MyHeader.displayName = "MyHeader";
-
   const links = [
     {text: "Home", url: "/"},
     {text: "Blog", url: "/blog"},
@@ -50,9 +35,8 @@ const Layout = ({pageTitle, children}) => {
       <ResponsiveContext.Consumer>
         {(size) => (
           <Box direction="column">
-            <MyHeader
+            <Header
               background="brand" pad="medium" justify="between"
-              ref={headerRef}
             >
               {size === "small" ?
                 <Menu
@@ -62,7 +46,6 @@ const Layout = ({pageTitle, children}) => {
                     {label: text, onClick: () => navigate(url)}
                   ))}
                   dropBackground="brand"
-                  dropTarget={headerRef.current}
                 /> :
                 <Box direction="row">
                   {links.map(({text, url}) => (
@@ -77,7 +60,7 @@ const Layout = ({pageTitle, children}) => {
               </Link>),
             )}
               </Nav>
-            </MyHeader>
+            </Header>
             <Header pad="small" justify="center">
               <Text size="xlarge" weight="bold">{pageTitle}</Text>
             </Header>
