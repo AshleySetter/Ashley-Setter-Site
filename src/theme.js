@@ -74,7 +74,7 @@ export default {
     },
     "breakpoints": {
       "small": {
-        "value": 768,
+        "value": 512,
         "borderSize": {
           "xsmall": "1px",
           "small": "2px",
